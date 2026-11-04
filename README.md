@@ -56,7 +56,3 @@ pytest
 Invalid requests return JSON such as `{"error": "..."}` with a 400, 404, or 405 status.
 
 Data is held in memory, so items added with POST are lost when the server restarts.
-
-## Agile process
-
-See [docs/AGILE.md](docs/AGILE.md).
