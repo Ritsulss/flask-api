@@ -1,0 +1,47 @@
+{
+  "info": {
+    "name": "Flask API Demo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "http://127.0.0.1:5000" }],
+  "item": [
+    {
+      "name": "GET /hello",
+      "request": { "method": "GET", "url": "{{baseUrl}}/hello" }
+    },
+    {
+      "name": "POST /hello",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/hello",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"name\": \"Student\"}" }
+      }
+    },
+    {
+      "name": "GET /data",
+      "request": { "method": "GET", "url": "{{baseUrl}}/data" }
+    },
+    {
+      "name": "POST /data",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/data",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Headphones\", \"category\": \"electronics\"}"
+        }
+      }
+    },
+    {
+      "name": "POST /data (missing field)",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/data",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"name\": \"Headphones\"}" }
+      }
+    }
+  ]
+}

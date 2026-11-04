@@ -1,0 +1,81 @@
+GET /hello
+Status:   200 (expected 200)
+Response: {
+  "message": "Welcome to the Flask API!"
+}
+------------------------------------------------------------
+POST /hello
+Request:  {"name": "Student"}
+Status:   200 (expected 200)
+Response: {
+  "message": "Hello, Student!"
+}
+------------------------------------------------------------
+GET /data
+Status:   200 (expected 200)
+Response: {
+  "count": 3,
+  "items": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "category": "electronics"
+    },
+    {
+      "id": 2,
+      "name": "Notebook",
+      "category": "stationery"
+    },
+    {
+      "id": 3,
+      "name": "Backpack",
+      "category": "accessories"
+    }
+  ]
+}
+------------------------------------------------------------
+POST /data
+Request:  {"name": "Headphones", "category": "electronics"}
+Status:   201 (expected 201)
+Response: {
+  "id": 4,
+  "name": "Headphones",
+  "category": "electronics"
+}
+------------------------------------------------------------
+GET /data
+Status:   200 (expected 200)
+Response: {
+  "count": 4,
+  "items": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "category": "electronics"
+    },
+    {
+      "id": 2,
+      "name": "Notebook",
+      "category": "stationery"
+    },
+    {
+      "id": 3,
+      "name": "Backpack",
+      "category": "accessories"
+    },
+    {
+      "id": 4,
+      "name": "Headphones",
+      "category": "electronics"
+    }
+  ]
+}
+------------------------------------------------------------
+POST /data
+Request:  {"name": "Headphones"}
+Status:   400 (expected 400)
+Response: {
+  "error": "Missing or invalid field(s): category. Each must be a non-empty string."
+}
+------------------------------------------------------------
+6/6 calls returned the expected status.
